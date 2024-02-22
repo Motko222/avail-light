@@ -2,7 +2,7 @@
 
 cd ~
 sudo apt install make git nano clang pkg-config libssl-dev build-essential -y
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+echo 1 | curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source ~/.cargo/env
 rustc --version
 git clone https://github.com/availproject/avail-light.git
