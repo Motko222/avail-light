@@ -4,10 +4,11 @@ cd ~
 sudo apt install make git nano clang pkg-config libssl-dev build-essential -y
 echo 1 | curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup update stable
+rustup default stable
 source ~/.cargo/env
 rustc --version
 git clone https://github.com/availproject/avail-light.git
-cd avail-light
+cd ~/avail-light
 cargo build --release
 
 sudo tee /etc/systemd/system/availightd.service > /dev/null <<EOF
