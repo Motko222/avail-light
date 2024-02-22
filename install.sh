@@ -25,3 +25,5 @@ EOF
 
 sudo systemctl daemon-reload
 sudo systemctl enable availightd
+
+echo "Node is not running, run start."
