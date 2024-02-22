@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo journalctl -u availightd.service -f --no-hostname -o cat
+sudo journalctl -u availightd -f --no-hostname -o cat
