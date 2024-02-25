@@ -3,17 +3,12 @@
 
 service=$(sudo systemctl status availightd --no-pager | grep "active (running)" | wc -l)
 
-if [ $service -ne 1 ]
-then 
-  status="error";
-  note="service not running"
-else 
-  status="ok";
-fi
+[ $service -ne 1 ] && status="error";note="service not running" || status="ok"
 
 tee << EOF
 {
   "status"="$status",
-  "service"="$service"
+  "note"="$note",
+  "service"=$service
 }
 EOF
