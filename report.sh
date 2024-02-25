@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-service=$(sudo systemctl status avail-light --no-pager | grep "active (running)" | wc -l)
+service=$(sudo systemctl status availightd --no-pager | grep "active (running)" | wc -l)
 
 if [ $service -ne 1 ]
 then 
