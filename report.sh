@@ -7,8 +7,8 @@ service=$(sudo systemctl status availightd --no-pager | grep "active (running)" 
 
 tee | jq << EOF
 {
-  "status"="$status",
-  "note"="$note",
-  "service"=$service
+  "status":"$status",
+  "note":"$note",
+  "service":$service
 }
 EOF
