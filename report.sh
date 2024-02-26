@@ -10,9 +10,9 @@ fi
 
 tee | jq << EOF
 {
-  "project":"$project",
-  "id":$id,
-  "machine":"$machine",
+  "project":"$PROJECT",
+  "id":$ID,
+  "machine":"$MACHINE",
   "status":"$status",
   "note":"$note",
   "service":$service
