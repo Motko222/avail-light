@@ -1,5 +1,9 @@
 #!/bin/bash
 
+read -p "Id? " id
+export ID=$id
+export CHAIN="goldberg"
+
 cd ~
 sudo apt install make git nano clang pkg-config libssl-dev build-essential -y
 echo 1 | curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
