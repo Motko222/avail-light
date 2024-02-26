@@ -14,6 +14,7 @@ tee | jq << EOF
   "id":$AVAIL_ID,
   "machine":"$MACHINE",
   "chain":"$AVAIL_CHAIN",
+  "type":"node",
   "status":"$status",
   "note":"$note",
   "service":$service
