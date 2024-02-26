@@ -1,5 +1,5 @@
 #!/bin/bash
-source ~/avail-light/config/env
+source ~/scripts/avail-light/config/env
 
 service=$(sudo systemctl status availightd --no-pager | grep "active (running)" | wc -l)
 
