@@ -1,6 +1,7 @@
 #!/bin/bash
 source ~/scripts/avail-light/config/env
 
+folder=$(echo $(cd -- $(dirname -- "${BASH_SOURCE[0]}") && pwd) | awk -F/ '{print $NF}')
 service=$(sudo systemctl status availightd --no-pager | grep "active (running)" | wc -l)
 
 if [ $service -eq 1 ]
@@ -10,7 +11,7 @@ fi
 
 tee | jq << EOF
 {
-  "project":"$PROJECT",
+  "project":"$folder",
   "id":$ID,
   "machine":"$MACHINE",
   "chain":"$CHAIN",
