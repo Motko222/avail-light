@@ -13,6 +13,7 @@ tee | jq << EOF
   "project":"$PROJECT",
   "id":$ID,
   "machine":"$MACHINE",
+  "chain":"$CHAIN",
   "status":"$status",
   "note":"$note",
   "service":$service
