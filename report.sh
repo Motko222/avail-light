@@ -5,7 +5,7 @@ service=$(sudo systemctl status availightd --no-pager | grep "active (running)" 
 
 if [ $service -eq 1 ]
 then status="ok"
-else status="error" note="service not running"
+else status="error"; note="service not running"
 fi
 
 tee | jq << EOF
