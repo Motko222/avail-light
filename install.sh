@@ -1,8 +1,8 @@
 #!/bin/bash
 
 read -p "Id? " id
-export ID=$id
-export CHAIN="goldberg"
+export AVAIL_ID=$id
+export AVAIL_CHAIN="goldberg"
 
 cd ~
 sudo apt install make git nano clang pkg-config libssl-dev build-essential -y
