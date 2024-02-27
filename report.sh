@@ -17,6 +17,7 @@ tee | jq << EOF
   "type":"node",
   "status":"$status",
   "note":"$note",
-  "service":$service
+  "service":$service,
+  "updated":"$(date +%s)"
 }
 EOF
