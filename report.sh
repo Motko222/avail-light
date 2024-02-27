@@ -18,6 +18,6 @@ tee | jq << EOF
   "status":"$status",
   "note":"$note",
   "service":$service,
-  "updated":"$(date +%s)"
+  "updated":"$(date --utc +%FT%TZ)"
 }
 EOF
