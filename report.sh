@@ -8,7 +8,7 @@ then status="ok"
 else status="error"; note="service not running"
 fi
 
-tee | jq << EOF
+cat << EOF
 {
   "project":"$folder",
   "id":$AVAIL_ID,
