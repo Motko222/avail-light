@@ -22,8 +22,8 @@ cat << EOF
   "service":$service,
   "updated":"$(date --utc +%FT%TZ)",
   "logs": 
-  { "timestamp":"$(echo $logs | tail -5 | head -1 | awk '{print $1})",
-    "type":"$(echo $logs | tail -5 | head -1 | awk '{print $2})",
-    "message":"$(echo $logs | tail -5 | head -1 | awk '{print $3})" }
+  { "timestamp":"$(echo $logs | tail -5 | head -1 | awk '{print $1}')",
+    "type":"$(echo $logs | tail -5 | head -1 | awk '{print $2}')",
+    "message":"$(echo $logs | tail -5 | head -1 | awk '{print $3}')" }
 }
 EOF
