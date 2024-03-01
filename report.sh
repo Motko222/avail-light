@@ -13,7 +13,7 @@ fi
 cat << EOF
 {
   "project":"$folder",
-  "id":$ID,
+  "id":"$ID",
   "machine":"$MACHINE",
   "chain":"goldberg",
   "type":"node",
