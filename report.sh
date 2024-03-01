@@ -1,6 +1,8 @@
 #!/bin/bash
 
 folder=$(echo $(cd -- $(dirname -- "${BASH_SOURCE[0]}") && pwd) | awk -F/ '{print $NF}')
+source ~/scripts/$folder/conf
+
 service=$(sudo systemctl status availightd --no-pager | grep "active (running)" | wc -l)
 
 if [ $service -eq 1 ]
@@ -13,7 +15,7 @@ logs=$(journalctl -u availightd --no-hostname -o cat | tail -5)
 cat << EOF
 {
   "project":"$folder",
-  "id":$AVAIL_ID,
+  "id":$ID,
   "machine":"$MACHINE",
   "chain":"goldberg",
   "type":"node",
