@@ -1,8 +1,10 @@
-o#!/bin/bash
+#!/bin/bash
 
-read -p "Id? " id
-echo 'export AVAIL_ID=$id' >>~/.profile
-echo 'export AVAIL_CHAIN="goldberg"' >>~/.profile
+id [ ! -f ~/scripts/avail-light/conf ] 
+then
+   read -p "Id? " id
+   echo 'export ID=$id' >~/scripts/avail-light/conf
+fi
 
 cd ~
 sudo apt install make git nano clang pkg-config libssl-dev build-essential -y
