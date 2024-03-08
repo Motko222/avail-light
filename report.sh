@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#folder=$(echo $(cd -- $(dirname -- "${BASH_SOURCE[0]}") && pwd) | awk -F/ '{print $NF}')
-#source ~/scripts/$folder/conf
 source ~/.bash_profile
 
 service=$(sudo systemctl status availightd --no-pager | grep "active (running)" | wc -l)
