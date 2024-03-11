@@ -1,11 +1,5 @@
 #!/bin/bash
 
-id [ ! -f ~/scripts/avail-light/conf ] 
-then
-   read -p "Id? " id
-   echo 'export ID=$id' >~/scripts/avail-light/conf
-fi
-
 cd ~
 sudo apt install make git nano clang pkg-config libssl-dev build-essential -y
 echo 1 | curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
