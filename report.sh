@@ -2,6 +2,8 @@
 
 source ~/.bash_profile
 
+cd ~/avail-light/target/release
+version=$(./avail-light -V | awk '{print $2}')
 service=$(sudo systemctl status availightd --no-pager | grep "active (running)" | wc -l)
 id=avail-$AVAIL_ID
 chain=goldberg
@@ -17,6 +19,7 @@ cat << EOF
   "project":"$folder",
   "id":"$id",
   "machine":"$MACHINE",
+  "version":"$version",
   "chain":"$chain",
   "type":"node",
   "status":"$status",
