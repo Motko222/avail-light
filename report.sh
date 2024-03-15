@@ -7,7 +7,7 @@ version=$(./avail-light -V | awk '{print $2}')
 service=$(sudo systemctl status availightd --no-pager | grep "active (running)" | wc -l)
 id=avail-$AVAIL_ID
 chain=goldberg
-bucket=$AVAIL_BUCKET
+bucket=node
 
 if [ $service -eq 1 ]
 then status="ok"
