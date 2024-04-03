@@ -9,6 +9,7 @@ source ~/.cargo/env
 rustc --version
 git clone https://github.com/availproject/avail-light.git
 cd ~/avail-light
+git checkout tags/v1.7.10
 cargo build --release
 
 sudo tee /etc/systemd/system/availightd.service > /dev/null <<EOF
