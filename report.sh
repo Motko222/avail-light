@@ -2,8 +2,14 @@
 
 source ~/.bash_profile
 
-cd ~/avail-light/target/release
-version=$(./avail-light -V | awk '{print $2}')
+if [ -d ~/avail-light ]
+then
+ cd ~/avail-light/target/release
+ version=$(./avail-light -V | awk '{print $2}')
+else
+ version=$(/root/.avail/bin/avail-light -V | awk '{print $2}')
+fi
+
 service=$(sudo systemctl status availightd --no-pager | grep "active (running)" | wc -l)
 id=avail-$AVAIL_ID
 chain=goldberg
