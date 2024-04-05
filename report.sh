@@ -1,20 +1,19 @@
 #!/bin/bash
 
 source ~/.bash_profile
-
-if [ -d ~/avail-light ]
-then
- cd ~/avail-light/target/release
- version=$(./avail-light -V | awk '{print $2}')
-else
- version=$(/root/.avail/bin/avail-light -V | awk '{print $2}')
-fi
-
-service=$(sudo systemctl status availightd --no-pager | grep "active (running)" | wc -l)
 id=avail-$AVAIL_ID
 chain=goldberg
 bucket=node
 
+version=$(/root/.avail/bin/avail-light -V | awk '{print $2}')
+
+health=$(curl -sS -I "http://localhost:7000/health" | head -1 | awk '{print $2}')
+case $health in
+ 200) status=ok;message=healthy ;;
+ *)   status=warning;message="not healthy - $health" ;;
+esac
+
+service=$(sudo systemctl status availightd --no-pager | grep "active (running)" | wc -l)
 if [ $service -eq 1 ]
 then status="ok"
 else status="error"; message="service not running"
