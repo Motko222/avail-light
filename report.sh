@@ -9,8 +9,8 @@ version=$(/root/.avail/bin/avail-light -V | awk '{print $2}')
 
 health=$(curl -sS -I "http://localhost:7000/health" | head -1 | awk '{print $2}')
 case $health in
- 200) status=ok;message=healthy ;;
- *)   status=warning;message="not healthy - $health" ;;
+ 200) status=ok ;;
+ *)   status=warning;message="health - $health" ;;
 esac
 
 service=$(sudo systemctl status availightd --no-pager | grep "active (running)" | wc -l)
