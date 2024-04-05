@@ -29,6 +29,7 @@ cat << EOF
   "status":"$status",
   "message":"$message",
   "service":$service,
+  "health":$health,
   "updated":"$(date --utc +%FT%TZ)"
 }
 EOF
