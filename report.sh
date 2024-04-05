@@ -15,9 +15,8 @@ case $health in
 esac
 
 service=$(sudo systemctl status availightd --no-pager | grep "active (running)" | wc -l)
-if [ $service -eq 1 ]
-then status="ok"
-else status="error"; message="service not running"
+if [ $service -ne 1 ]
+then status="error"; message="service not running"
 fi
 
 cat << EOF
