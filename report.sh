@@ -8,7 +8,7 @@ bucket=node
 version=$(/root/.avail/bin/avail-light -V | awk '{print $2}')
 
 health=$(curl -sS -I "http://localhost:7000/health" | head -1 | awk '{print $2}')
-if [ -z $health ] then health=null; fi
+if [ -z $health ]; then health=null; fi
 case $health in
  200) status=ok ;;
  *)   status=warning;message="health - $health" ;;
